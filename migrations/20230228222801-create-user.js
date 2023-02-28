@@ -17,9 +17,6 @@ module.exports = {
           key: "id",
         },
       },
-      rol: {
-        type: Sequelize.STRING,
-      },
       name: {
         type: Sequelize.STRING,
       },
