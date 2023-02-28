@@ -9,7 +9,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      rolID: {
+      rolId: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {

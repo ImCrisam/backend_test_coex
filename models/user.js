@@ -9,8 +9,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       this.belongsTo(models.rol, {
-        foreignKey: "rolID",
-        as: "rol",
+        foreignKey: "rolId",
+        as: "rols",
       });
     }
   }
