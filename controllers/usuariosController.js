@@ -1,5 +1,5 @@
 const models = require("../models");
-
+const rol = require("../models").rol;
 module.exports = {
   add: async (req, res, next) => {
     try {
@@ -15,7 +15,14 @@ module.exports = {
 
   list: async (req, res, next) => {
     try {
-      const reg = await models.user.findAll();
+      const reg = await models.user.findAll({
+        include: [
+          {
+            model: rol,
+            as: "rols",
+          },
+        ],
+      });
       res.status(200).json(reg);
     } catch (e) {
       console.log(e);
