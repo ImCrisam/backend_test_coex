@@ -21,7 +21,16 @@ module.exports = {
 
   list: async (req, res, next) => {
     try {
-      const reg = await models.rol.findAll();
+      const reg = await models.rol.findAll({
+        include: [
+          {
+            model: models.permissions,
+          },
+          {
+            model: models.permissions,
+          },
+        ],
+      });
       res.status(200).json(reg);
     } catch (e) {
       console.log(e);
